@@ -4,7 +4,7 @@ import rclpy
 from rclpy.node import Node
 from msg_types.msg import IMUdata, Vector3
 
-from hardware_interface.lib.ble_interface import BLEInterface
+from rvr_ws.src.hardware_interface.hardware_interface.lib.hardware_lib import BLEInterface
 
 
 class BLEInterfaceNode(Node):
