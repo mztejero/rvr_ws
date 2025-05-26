@@ -1,0 +1,14 @@
+package.xml
+setup.cfg
+setup.py
+msg_types/__init__.py
+msg_types.egg-info/PKG-INFO
+msg_types.egg-info/SOURCES.txt
+msg_types.egg-info/dependency_links.txt
+msg_types.egg-info/requires.txt
+msg_types.egg-info/top_level.txt
+msg_types.egg-info/zip-safe
+resource/msg_types
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py
