@@ -9,6 +9,7 @@ set(msg_files
   "msg/Joystick.msg"
   "msg/IMUdata.msg"
   "msg/Vector3.msg"
+  "msg/LiDAR.msg"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}

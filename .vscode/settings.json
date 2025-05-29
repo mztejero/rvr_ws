@@ -1,0 +1,29 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/pi/rvr_ws/build/visualization",
+        "/home/pi/rvr_ws/install/visualization/lib/python3.10/site-packages",
+        "/home/pi/rvr_ws/build/my_robot_controller",
+        "/home/pi/rvr_ws/install/my_robot_controller/lib/python3.10/site-packages",
+        "/home/pi/rvr_ws/build/hardware_interface",
+        "/home/pi/rvr_ws/install/hardware_interface/lib/python3.10/site-packages",
+        "/home/pi/rvr_ws/build/controllers",
+        "/home/pi/rvr_ws/install/controllers/lib/python3.10/site-packages",
+        "/home/pi/rvr_ws/install/msg_types/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/pi/rvr_ws/build/visualization",
+        "/home/pi/rvr_ws/install/visualization/lib/python3.10/site-packages",
+        "/home/pi/rvr_ws/build/my_robot_controller",
+        "/home/pi/rvr_ws/install/my_robot_controller/lib/python3.10/site-packages",
+        "/home/pi/rvr_ws/build/hardware_interface",
+        "/home/pi/rvr_ws/install/hardware_interface/lib/python3.10/site-packages",
+        "/home/pi/rvr_ws/build/controllers",
+        "/home/pi/rvr_ws/install/controllers/lib/python3.10/site-packages",
+        "/home/pi/rvr_ws/install/msg_types/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "ros.distro": "humble"
+}

@@ -21,7 +21,8 @@ setup(
     entry_points={
         'console_scripts': [
             "py_joystick_interface_node = hardware_interface.nodes.py_joystick_interface_node:main",
-            "py_hardware_interface_node = hardware_interface.nodes.py_hardware_interface_node:main"
+            "py_arduino_ble_interface_node = hardware_interface.nodes.py_arduino_ble_interface_node:main",
+            "py_lidar_interface_node = hardware_interface.nodes.py_lidar_interface_node:main"
         ],
     },
 )

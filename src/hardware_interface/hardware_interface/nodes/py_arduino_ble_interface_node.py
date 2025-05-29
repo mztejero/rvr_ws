@@ -4,13 +4,13 @@ import rclpy
 from rclpy.node import Node
 from msg_types.msg import IMUdata, Vector3
 
-from rvr_ws.src.hardware_interface.hardware_interface.lib.hardware_lib import BLEInterface
+from hardware_interface.lib.hardware_lib import BLEInterface
 
 
 class BLEInterfaceNode(Node):
 
     def __init__(self):
-        super().__init__("py_hardware_interface_node")
+        super().__init__("py_arduino_ble_interface_node")
 
         self.dt = 0.1
 

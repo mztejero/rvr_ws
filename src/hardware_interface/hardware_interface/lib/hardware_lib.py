@@ -60,31 +60,37 @@ class LiDARInterface:
                 return p.device
 
     def read_raw_data(self):
-        while True:
-            try:
-                HEADER = None
-                while HEADER != b'\x54\x2C':
-                    packet_1 = self.lidar.read(1)
-                    packet_2 = self.lidar.read(1)
-                    HEADER = packet_1 + packet_2
+
+        try:
+            attempts = 0
+            HEADER = None
+            while attempts <= 100:
+                packet_1 = self.lidar.read(1)
+                packet_2 = self.lidar.read(1)
+                HEADER = packet_1 + packet_2
+
                 if HEADER == b'\x54\x2C':
                     packet = HEADER + self.lidar.read(45)
 
-                    speed_raw = struct.unpack_from('<H', packet, 2)[0]
-                    start_angle_raw = struct.unpack_from('<H', packet, 4)[0]
+                    speed_raw = float(struct.unpack_from('<H', packet, 2)[0])
+                    start_angle_raw = float(struct.unpack_from('<H', packet, 4)[0]*np.pi/180/100)
 
                     distance_data_raw, intensity_data_raw = [], []
                     for i in range(6, 42, 3):
-                        distance = struct.unpack_from('<H', packet, i)[0]
-                        intensity = struct.unpack_from('<B', packet, i + 2)[0]
+                        distance = float(struct.unpack_from('<H', packet, i)[0]/1000)
+                        intensity = float(struct.unpack_from('<B', packet, i + 2)[0]/1000)
                         distance_data_raw.append(distance)
                         intensity_data_raw.append(intensity)
 
-                    end_angle_raw = struct.unpack_from('<H', packet, 42)[0]
-                    time_raw = struct.unpack_from('<H', packet, 44)[0]
+                    end_angle_raw = float(struct.unpack_from('<H', packet, 42)[0]*np.pi/180/100)
+                    time_raw = int(struct.unpack_from('<H', packet, 44)[0])
 
-            except Exception as e:
-                print(f"Error in reading: {e}")
+                    return speed_raw, start_angle_raw, distance_data_raw, intensity_data_raw, end_angle_raw, time_raw
+                attempts += 1
+            return None
+        except Exception as e:
+            print(f"Error in reading: {e}")
 
 if __name__ == '__main__':
     arduino_ble = BLEInterface()
+    ldrobot = LiDARInterface()
