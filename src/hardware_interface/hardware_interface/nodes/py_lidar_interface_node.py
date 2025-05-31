@@ -38,14 +38,6 @@ class LiDARInterfaceNode(Node):
 
             self.lidar_data.publish(msg)
 
-
-
-        # angles = np.linspace(start_angle, end_angle, len(distances))
-        # x = distances*np.cos(angles)
-        # y = distances*np.sin(angles)
-
-        # self.get_logger().info(f"start angle = {start_angle}, end angle = {end_angle}")
-
 def main(args = None):
     rclpy.init(args = args)
     node = LiDARInterfaceNode()

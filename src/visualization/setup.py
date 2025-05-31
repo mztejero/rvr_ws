@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            "py_map_node = visualization.py_map_node:main"
+            "py_map_node = visualization.node.py_map_node:main",
+            "py_visualization_node = visualization.node.py_visualization_node:main"
         ],
     },
 )
