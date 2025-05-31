@@ -25,5 +25,6 @@
         "/opt/ros/humble/lib/python3.10/site-packages",
         "/opt/ros/humble/local/lib/python3.10/dist-packages"
     ],
-    "ros.distro": "humble"
+    "ros.distro": "humble",
+    "cmake.sourceDirectory": "/home/mztejero/rvr_ws/src/msg_types"
 }
